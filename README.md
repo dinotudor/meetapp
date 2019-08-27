@@ -18,6 +18,8 @@ _User Model:_
 - email: String, required, unique
 - password: min 6 characters
 
+### Routes
+
 - POST - create user
 - PUT - edit user/:id
 - POST - create session
