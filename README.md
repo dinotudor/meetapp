@@ -20,7 +20,7 @@ _User Model:_
 
 ### Routes
 
-- POST - create user
-- PUT - edit user/:id
-- POST - create session
-- DELETE - user/:id
+- POST - '/users' - create user
+- PUT - '/users/:id - edit user
+- POST - '/session' - create login session
+- DELETE - 'users/:id' - delete user
