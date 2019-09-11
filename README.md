@@ -15,13 +15,12 @@ Users can sign up using name, email and password. (confirmation field required)
 ### Models:
 
 - _User:_
+  - `name: String, required`
+  - `email: String, required, unique`
+  - `password: min 6 characters`
 - _File:_
 - _Meetup:_
 - _Subscritpion:_
-
-- name: String, required,
-- email: String, required, unique
-- password: min 6 characters
 
 ### Routes
 
