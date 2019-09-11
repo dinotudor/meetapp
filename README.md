@@ -8,11 +8,16 @@ Application for developers to keep track of events as meet up's and workshops.
 
 Users can sign up using name, email and password. (confirmation field required)
 
-**-Authentication: JWT**
-**-Validation Schema: Yup**
-**-Encryptation: becrypt**
+- **- Authentication: JWT**
+- **- Validation Schema: Yup**
+- **- Encryptation: becrypt**
 
-_User Model:_
+### Models:
+
+- _User:_
+- _File:_
+- _Meetup:_
+- _Subscritpion:_
 
 - name: String, required,
 - email: String, required, unique
@@ -20,7 +25,11 @@ _User Model:_
 
 ### Routes
 
-- POST - '/users' - create user
-- PUT - '/users/:id - edit user
-- POST - '/session' - create login session
-- DELETE - 'users/:id' - delete user
+- USERS:
+  - POST - `'/users'` - create user
+  - PUT - `'/users/:id'` - edit user
+  - DELETE - `'users/:id'` - delete user
+
+-SESSIONS:
+
+- POST - `'/session'` - create login session
