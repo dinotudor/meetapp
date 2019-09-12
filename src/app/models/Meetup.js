@@ -1,5 +1,5 @@
-import Sequelize, { Model } from 'sequelize';
 import { isBefore } from 'date-fns';
+import Sequelize, { Model } from 'sequelize';
 
 class Meetup extends Model {
   static init(sequelize) {
