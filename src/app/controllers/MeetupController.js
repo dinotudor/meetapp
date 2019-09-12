@@ -7,7 +7,8 @@ class MeetupController {
   }
 
   async store(req, res) {
-    return res.json({ ok: true });
+    const { title, description, location, date, file_id } = req.body;
+    return res.json({ title, description, location, date, file_id });
   }
 }
 
