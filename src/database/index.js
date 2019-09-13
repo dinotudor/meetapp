@@ -12,6 +12,7 @@ class Database {
   constructor() {
     this.connection = new Sequelize(databaseConfig);
     this.init();
+    this.associate();
   }
 
   init() {
