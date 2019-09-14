@@ -38,10 +38,6 @@ class MeetupController {
   }
 
   async update(req, res) {
-    return res.json({ ok: true });
-  }
-
-  /*  async update(req, res) {
     const schema = Yup.object().shape({
       title: Yup.string(),
       file_id: Yup.number(),
@@ -57,7 +53,6 @@ class MeetupController {
     const user_id = req.userId;
 
     const meetup = await Meetup.findByPk(req.params.id);
-    console.log(meetup);
 
     if (meetup.user_id !== user_id) {
       return res.satus(400).json({ error: 'Not authorized' });
@@ -74,7 +69,7 @@ class MeetupController {
     await meetup.update(req.body);
 
     return res.json(meetup);
-  } */
+  }
 }
 
 export default new MeetupController();

@@ -17,12 +17,12 @@ routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
 
-routes.put('/users', UserController.update);
-
 routes.post('/files', upload.single('file'), FileController.store);
+
+routes.put('/users', UserController.update);
 
 routes.get('/meetup', MeetupController.index);
 routes.post('/meetup', MeetupController.store);
-routes.put('/meetupdate/:id', MeetupController.update);
+routes.put('/meetup', MeetupController.update);
 
 export default routes;
