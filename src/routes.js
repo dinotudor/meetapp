@@ -23,6 +23,6 @@ routes.put('/users', UserController.update);
 
 routes.get('/meetup', MeetupController.index);
 routes.post('/meetup', MeetupController.store);
-routes.put('/meetup', MeetupController.update);
+routes.put('/meetup/:id', MeetupController.update);
 
 export default routes;
