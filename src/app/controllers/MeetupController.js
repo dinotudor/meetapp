@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
-import User from '../models/User';
+import { isBefore, parseISO } from 'date-fns';
 import Meetup from '../models/Meetup';
 
 class MeetupController {
   async index(req, res) {
-    const users = await User.findAll();
-    return res.json(users);
+    const meetUps = await Meetup.findAll();
+    return res.json(meetUps);
   }
 
   async store(req, res) {
@@ -21,15 +21,15 @@ class MeetupController {
       return res.status(400).json({ error: 'Validation failed' });
     }
 
-    // const user_id = req.userId;
+    if (isBefore(parseISO(req.body.date), new Date())) {
+      return res.status(400).json({ error: 'Invalid date' });
+    }
+
+    const user_id = req.userId;
 
     const meetup = await Meetup.create({
-      title: req.body.title,
-      description: req.body.description,
-      file_id: req.body.file_id,
-      user_id: req.userId,
-      location: req.body.location,
-      date: req.body.date,
+      ...req.body,
+      user_id,
     });
 
     return res.json(meetup);
